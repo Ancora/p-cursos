@@ -15,6 +15,15 @@ class CreateDescriptionsTable extends Migration
     {
         Schema::create('descriptions', function (Blueprint $table) {
             $table->id();
+
+            $table->text('name');
+            $table->unsignedBigInteger('lesson_id');
+
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

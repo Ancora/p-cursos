@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Reaction extends Model
 {
     use HasFactory;
+
+    /* Popular tabela massivamente */
+    protected $guarded = ['id'];
+
+    const LIKE      = 1;
+    const DISLIKE   = 2;
+
 }
