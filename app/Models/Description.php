@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Description extends Model
 {
     use HasFactory;
+
+    /* Popular tabela massivamente */
+    protected $guarded = ['id'];
+
+    /* RELACIONAMENTOS */
+    /* 1:1 inversa */
+    public function lesson() {
+        return $this->belongsTo('App\Models\Lesson');
+    }
 }

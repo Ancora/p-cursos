@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Level extends Model
 {
     use HasFactory;
+
+    /* Popular tabela massivamente */
+    protected $guarded = ['id'];
+
+    /* RELACIONAMENTOS */
+    /* 1:N */
+    public function courses() {
+        return $this->hasMany('App\Models\Course');
+    }
 }

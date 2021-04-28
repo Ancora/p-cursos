@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Goal extends Model
 {
     use HasFactory;
+
+    /* Popular tabela massivamente */
+    protected $guarded = ['id'];
+
+    /* RELACIONAMENTOS */
+    /* 1:N inversa */
+    public function course() {
+        return $this->belongsTo('App\Models\Course');
+    }
 }

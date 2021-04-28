@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
+
+    /* Popular tabela massivamente */
+    protected $guarded = ['id'];
+
+    /* RELACIONAMENTOS */
+    /* 1:1 inversa */
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }
